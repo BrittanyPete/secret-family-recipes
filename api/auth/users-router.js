@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const bcrypt = require('bcryptjs');
-const { usernameExists, validateUser} = require('./users-middleware');
+const { usernameExists, validateUser} = require('../middleware/users-middleware');
 const { buildToken } = require('./user-tokenBuilder');
 const { BCRYPT_ROUNDS } = require('../secrets');
 const User = require('./users-model');
@@ -23,8 +23,7 @@ router.post('/register', usernameExists, validateUser, async (req, res, next) =>
 
     User.add(user)
         .then(newUser => {
-            console.log('newUser:', newUser)
-            res.status(201).json({ message: `Welcome, ${newUser}!`})
+            res.status(201).json({ message: `Welcome, ${newUser.username}!`})
         })
         .catch(err => {
             next(err)

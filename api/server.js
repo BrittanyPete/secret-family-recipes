@@ -3,6 +3,7 @@ const helmet = require('helmet')
 const cors = require('cors')
 
 const userRouter = require('./auth/users-router.js');
+const recipeRouter = require('./recipes/recipe-router')
 
 // function getAllUsers() { return db('users') }
 
@@ -19,6 +20,8 @@ server.use(helmet())
 server.use(cors())
 
 server.use('/api/auth', userRouter);
+server.use('/api/recipe', recipeRouter);
+
 
 server.use((err, req, res, next) => {
   res.status(err.status || 500).json({

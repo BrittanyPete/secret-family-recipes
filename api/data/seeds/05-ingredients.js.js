@@ -1,15 +1,15 @@
 const ingredients = [
-  {ingredient_name: 'butter'},
-  {ingredient_name: 'peanut butter'},
-  {ingredient_name: 'sugar'},
-  {ingredient_name: 'eggs'},
-  {ingredient_name: 'flour'},
-  {ingredient_name: 'baking soda'},
-  {ingredient_name: 'sour cream'},
-  {ingredient_name: 'ranch powder'},
-  {ingredient_name: 'cheese'},
-  {ingredient_name: 'milk'},
-  {ingredient_name: 'chocolate powder'},
+  {ingredient_name: 'butter', quantity: 1, measurement: 'cups'},
+  {ingredient_name: 'peanut butter', quantity: 1, measurement: 'cups'},
+  {ingredient_name: 'sugar', quantity: 1, measurement: 'cups'},
+  {ingredient_name: 'eggs', quantity: 2, measurement: 'large'},
+  {ingredient_name: 'flour', quantity: 2, measurement: 'cups'},
+  {ingredient_name: 'baking soda', quantity: 1, measurement: 'tsp'},
+  {ingredient_name: 'sour cream', quantity: 16, measurement: 'oz'},
+  {ingredient_name: 'ranch powder', quantity: 1, measurement: 'packet'},
+  {ingredient_name: 'cheese', quantity: 1, measurement: 'cups'},
+  {ingredient_name: 'milk', quantity: 2, measurement: 'cups'},
+  {ingredient_name: 'chocolate powder', quantity: 2, measurement: 'tbsp'},
 ]
 
 

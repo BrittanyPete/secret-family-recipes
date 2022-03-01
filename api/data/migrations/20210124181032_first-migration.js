@@ -41,35 +41,26 @@ exports.up = async (knex) => {
     .createTable('ingredients', tbl => {
       tbl.increments('ingredient_id')
       tbl.string('ingredient_name', 200)
-    })
-    .createTable('measurement', tbl => {
-      tbl.increments('measurement_id')
       tbl.decimal('quantity')
       tbl.string('measurement')
     })
-    .createTable('ing_measure', tbl => {
-      tbl.integer('recipe_id')
+    .createTable('recipe_ing', tbl => {
+      tbl.integer('step_id')
         .unsigned()
         .notNullable()
-        .references('recipe_id')
-        .inTable('recipes')
+        .references('step_id')
+        .inTable('steps')
       tbl.integer('ingredient_id')
         .unsigned()
         .notNullable()
         .references('ingredient_id')
         .inTable('ingredients')
-      tbl.integer('measurement_id')
-        .unsigned()
-        .notNullable()
-        .references('measurement_id')
-        .inTable('measurement')
     })
 }
 
 exports.down = async (knex) => {
   await knex.schema
-  .dropTableIfExists('ing_measure')
-  .dropTableIfExists('measurement')
+  .dropTableIfExists('recipe_ing')
   .dropTableIfExists('ingredients')
   .dropTableIfExists('steps')
   .dropTableIfExists('recipes')
